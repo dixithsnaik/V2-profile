@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:gradient_borders/box_borders/gradient_box_border.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:v2_profile/globle/pallet.dart';
 
 class StoreButton extends StatelessWidget {
@@ -21,33 +24,59 @@ class StoreButton extends StatelessWidget {
           const BoxShadow(
             color: whiteColor,
             spreadRadius: 0,
-            blurRadius: 10,
-            offset: Offset(-10, -10),
+            blurRadius: 8,
+            offset: Offset(-8, -8),
           ),
         ],
+        gradient: const LinearGradient(
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft,
+          tileMode: TileMode.decal,
+          colors: [
+            Color(0XFFF6D1FF),
+            Color(0XFFFFD3E5),
+            Color(0XFFFFF3F3),
+            Color(0x0fffffff),
+          ],
+        ),
         borderRadius: BorderRadius.circular(120),
-        border: Border.all(
+        border: const GradientBoxBorder(
           width: 2,
-          color: primaryTextColor,
-          strokeAlign: BorderSide.strokeAlignOutside,
+          gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            tileMode: TileMode.decal,
+            colors: [
+              Color(0XFF904EC4),
+              Color(0XFFC695D4),
+              Color(0XFFFFEFE4),
+            ],
+          ),
         ),
       ),
-      child: Row(
-        children: [
-          SvgPicture.asset(
-            "assets/icons/Isolation_Mode.svg",
-            height: 15.5,
-          ),
-          const SizedBox(width: 6),
-          const Text(
-            "Go Elite",
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w700,
-              color: primaryTextColor,
+      child: Shimmer.fromColors(
+        direction: ShimmerDirection.rtl,
+        baseColor: const Color(0XFF904EC4),
+        highlightColor: const Color(0XFFFFEFE4),
+        child: Row(
+          children: [
+            SvgPicture.asset(
+              "assets/icons/Isolation_Mode.svg",
+              height: 15.5,
             ),
-          ),
-        ],
+            const SizedBox(width: 6),
+            Text(
+              "Go Elite",
+              style: GoogleFonts.montserrat(
+                textStyle: const TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w800,
+                  color: primaryTextColor,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

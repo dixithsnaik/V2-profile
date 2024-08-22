@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:v2_profile/globle/pallet.dart';
 
 class PostWidget extends StatelessWidget {
@@ -32,24 +33,28 @@ class PostWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Row(
+                      Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
                             "Priya Dutta",
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600,
-                              color: primaryTextColor,
+                            style: GoogleFonts.montserrat(
+                              textStyle: const TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                                color: primaryTextColor,
+                              ),
                             ),
                           ),
-                          SizedBox(width: 4),
+                          const SizedBox(width: 4),
                           Text(
                             "2h ago",
-                            style: TextStyle(
-                              fontSize: 10,
-                              fontWeight: FontWeight.w400,
-                              color: secondaryTextColor,
+                            style: GoogleFonts.montserrat(
+                              textStyle: const TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w400,
+                                color: primaryTextColor,
+                              ),
                             ),
                           ),
                         ],
@@ -57,12 +62,14 @@ class PostWidget extends StatelessWidget {
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          const Text(
+                          Text(
                             "PixelWarriors",
-                            style: TextStyle(
-                              fontSize: 10,
-                              fontWeight: FontWeight.w400,
-                              color: secondaryTextColor,
+                            style: GoogleFonts.montserrat(
+                              textStyle: const TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w400,
+                                color: primaryTextColor,
+                              ),
                             ),
                           ),
                           const SizedBox(width: 4),
@@ -73,7 +80,17 @@ class PostWidget extends StatelessWidget {
                               borderRadius: BorderRadius.circular(120),
                               color: secondaryColor,
                             ),
-                            child: const Center(child: Text("🐝 Buzz")),
+                            child: Center(
+                                child: Text(
+                              "🐝 Buzz",
+                              style: GoogleFonts.montserrat(
+                                textStyle: const TextStyle(
+                                  fontSize: 8,
+                                  fontWeight: FontWeight.w500,
+                                  color: primaryTextColor,
+                                ),
+                              ),
+                            )),
                           )
                         ],
                       ),
@@ -114,12 +131,14 @@ class PostWidget extends StatelessWidget {
                           height: 18,
                         ),
                         const SizedBox(width: 5),
-                        const Text(
+                        Text(
                           "32",
-                          style: TextStyle(
-                            fontSize: 10,
-                            fontWeight: FontWeight.w600,
-                            color: primaryTextColor,
+                          style: GoogleFonts.montserrat(
+                            textStyle: const TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w600,
+                              color: primaryTextColor,
+                            ),
                           ),
                         ),
                       ],
@@ -139,12 +158,14 @@ class PostWidget extends StatelessWidget {
                           height: 18,
                         ),
                         const SizedBox(width: 5),
-                        const Text(
+                        Text(
                           "2.5k",
-                          style: TextStyle(
-                            fontSize: 10,
-                            fontWeight: FontWeight.w600,
-                            color: primaryTextColor,
+                          style: GoogleFonts.montserrat(
+                            textStyle: const TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w600,
+                              color: primaryTextColor,
+                            ),
                           ),
                         ),
                         const SizedBox(width: 6),

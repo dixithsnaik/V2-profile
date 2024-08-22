@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:v2_profile/globle/pallet.dart';
 
 class InterestsButton extends StatelessWidget {
@@ -20,10 +21,12 @@ class InterestsButton extends StatelessWidget {
       ),
       child: Text(
         lable,
-        style: const TextStyle(
-          fontSize: 10,
-          fontWeight: FontWeight.w600,
-          color: primaryTextColor,
+        style: GoogleFonts.montserrat(
+          textStyle: const TextStyle(
+            fontSize: 10,
+            fontWeight: FontWeight.w600,
+            color: primaryTextColor,
+          ),
         ),
       ),
     );

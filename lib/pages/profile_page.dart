@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:v2_profile/globle/pallet.dart';
 import 'package:v2_profile/widgets/custom_button.dart';
 import 'package:v2_profile/widgets/custom_card.dart';
+import 'package:v2_profile/widgets/get_verified.dart';
 import 'package:v2_profile/widgets/interests_button.dart';
 import 'package:v2_profile/widgets/post_widget.dart';
 import 'package:v2_profile/widgets/store_button.dart';
@@ -15,7 +17,7 @@ class ProfilePage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        physics: const BouncingScrollPhysics(),
+        physics: const ClampingScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16).copyWith(top: 30),
           child: SafeArea(
@@ -34,13 +36,15 @@ class ProfilePage extends StatelessWidget {
                           decoration: BoxDecoration(
                               color: primaryColor,
                               borderRadius: BorderRadius.circular(360)),
-                          child: const Center(
+                          child: Center(
                             child: Text(
                               "MS",
-                              style: TextStyle(
-                                fontSize: 32,
-                                fontWeight: FontWeight.bold,
-                                color: primaryTextColor,
+                              style: GoogleFonts.montserrat(
+                                textStyle: const TextStyle(
+                                  fontSize: 32,
+                                  fontWeight: FontWeight.w700,
+                                  color: primaryTextColor,
+                                ),
                               ),
                             ),
                           ),
@@ -65,48 +69,55 @@ class ProfilePage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 12),
-                const Row(
+                Row(
                   children: [
                     Text(
                       "Mohit Sharma",
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                        color: primaryTextColor,
+                      style: GoogleFonts.montserrat(
+                        textStyle: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          color: primaryTextColor,
+                        ),
                       ),
                     ),
-                    SizedBox(width: 4),
+                    const SizedBox(width: 4),
                     Text(
                       "@mohit_sharma",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        fontStyle: FontStyle.italic,
-                        color: secondaryTextColor,
+                      style: GoogleFonts.montserrat(
+                        textStyle: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.italic,
+                          color: secondaryTextColor,
+                        ),
                       ),
                     ),
                   ],
                 ),
-                const Text(
+                Text(
                   "Exploring new ideas and sharing insights. Always curious.",
-                  style: TextStyle(
-                    fontSize: 10,
-                    fontWeight: FontWeight.w500,
-                    color: primaryTextColor,
+                  style: GoogleFonts.montserrat(
+                    textStyle: const TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w400,
+                      color: primaryTextColor,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 6),
-                const Text(
+                Text(
                   "IIT Bombay · B.Sc. (Chem) · 2nd Year",
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w700,
-                    color: secondaryTextColor,
+                  style: GoogleFonts.montserrat(
+                    textStyle: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700,
+                      color: secondaryTextColor,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 24),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     CustomCard(
                       icon:
@@ -114,10 +125,11 @@ class ProfilePage extends StatelessWidget {
                       lable: "Contrib Points",
                       desc: "2.2K",
                     ),
+                    const SizedBox(width: 12),
                     CustomCard(
                       icon: SvgPicture.asset("assets/icons/group.svg",
                           height: 20),
-                      lable: "My Squad ",
+                      lable: "My Squad",
                       desc: "103",
                     ),
                   ],
@@ -142,22 +154,26 @@ class ProfilePage extends StatelessWidget {
                               SvgPicture.asset("assets/icons/menu.svg",
                                   height: 20),
                               const SizedBox(width: 8),
-                              const Text(
+                              Text(
                                 "Interests",
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w600,
-                                  color: primaryTextColor,
+                                style: GoogleFonts.montserrat(
+                                  textStyle: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600,
+                                    color: primaryTextColor,
+                                  ),
                                 ),
                               ),
                             ],
                           ),
-                          const Text(
+                          Text(
                             "3",
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.w700,
-                              color: primaryTextColor,
+                            style: GoogleFonts.montserrat(
+                              textStyle: const TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.w700,
+                                color: primaryTextColor,
+                              ),
                             ),
                           ),
                         ],
@@ -185,30 +201,37 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 12),
-                const Row(
+                const GetVerified(),
+                const SizedBox(height: 12),
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       "Community posts",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color: primaryTextColor,
+                      style: GoogleFonts.montserrat(
+                        textStyle: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: primaryTextColor,
+                        ),
                       ),
                     ),
                     Text(
                       "24",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color: primaryTextColor,
+                      style: GoogleFonts.montserrat(
+                        textStyle: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w700,
+                          color: primaryTextColor,
+                        ),
                       ),
                     ),
                   ],
                 ),
                 const SizedBox(height: 10),
                 const PostWidget(),
+                const SizedBox(height: 90),
               ],
             ),
           ),

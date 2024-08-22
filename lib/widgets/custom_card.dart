@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:v2_profile/globle/pallet.dart';
 
 class CustomCard extends StatelessWidget {
@@ -15,16 +16,14 @@ class CustomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: whiteColor,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      padding: const EdgeInsets.symmetric(vertical: 16)
-          .copyWith(left: 16, right: 25),
-      margin: const EdgeInsets.only(right: 12),
-      child: SizedBox(
-        width: 118,
+    return Expanded(
+      child: Container(
+        decoration: BoxDecoration(
+          color: whiteColor,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        padding: const EdgeInsets.symmetric(vertical: 16)
+            .copyWith(left: 16, right: 25),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -34,10 +33,12 @@ class CustomCard extends StatelessWidget {
                 const SizedBox(width: 8),
                 Text(
                   lable,
-                  style: const TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
-                    color: primaryTextColor,
+                  style: GoogleFonts.montserrat(
+                    textStyle: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: primaryTextColor,
+                    ),
                   ),
                 ),
               ],
@@ -45,10 +46,12 @@ class CustomCard extends StatelessWidget {
             const SizedBox(height: 2),
             Text(
               desc,
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w900,
-                color: primaryTextColor,
+              style: GoogleFonts.montserrat(
+                textStyle: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w700,
+                  color: primaryTextColor,
+                ),
               ),
             ),
           ],
