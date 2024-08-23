@@ -19,6 +19,7 @@ class PostWidget extends StatelessWidget {
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -100,6 +101,19 @@ class PostWidget extends StatelessWidget {
               ),
               SvgPicture.asset("assets/icons/more.svg"),
             ],
+          ),
+          const SizedBox(height: 12),
+          SizedBox(
+            child: Text(
+              "[Supercellmake] Era of Heroes and villains !!",
+              style: GoogleFonts.montserrat(
+                textStyle: const TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.w400,
+                  color: primaryTextColor,
+                ),
+              ),
+            ),
           ),
           const SizedBox(height: 12),
           SizedBox(
